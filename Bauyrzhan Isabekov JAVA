@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SearchApp {
+    public static void main(String[] args) {
+
+        ArrayList<String> data = new ArrayList<>();
+        data.add("Алматы");
+        data.add("Астана");
+        data.add("Шымкент");
+        data.add("Қарағанды");
+        data.add("Тараз");
+        data.add("Павлодар");
+        data.add("Семей");
+        data.add("Ақтөбе");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Іздеу сөзін енгіз: ");
+        String input = sc.nextLine().toLowerCase();
+
+        System.out.println("Нәтижелер:");
+
+        boolean found = false;
+
+        for (String city : data) {
+            if (city.toLowerCase().contains(input)) {
+                System.out.println("- " + city);
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Ештеңе табылмады");
+        }
+
+        sc.close();
+    }
+}
